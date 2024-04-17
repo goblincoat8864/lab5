@@ -4,6 +4,7 @@ import static androidx.core.app.NotificationCompat.getExtras;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +21,8 @@ public class ActActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Intent intent = getIntent();
-        String actnumber = getExtras().getString("buttonclicked");
+        String actnumber = intent.getStringExtra("s");
+        System.out.println("s");
 
 
         }

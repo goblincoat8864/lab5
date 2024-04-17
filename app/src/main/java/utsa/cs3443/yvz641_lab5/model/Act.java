@@ -22,21 +22,21 @@ public class Act {
     public int actNumber;
     Context context;
 
-        try {
+      //  try {
 
 
-            AssetManager assetManager = context.getAssets();
-            InputStream file = assetManager.open("Act_1_Scenes");
-            BufferedReader reader = new BufferedReader(new InputStreamReader(file));
-            new InputStreamReader(file);
-            String line;
-            while ((line = reader.readLine()) != null) {
-                actText = line;
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        //    AssetManager assetManager = context.getAssets();
+           // InputStream file = assetManager.open("Act_1_Scenes");
+            //BufferedReader reader = new BufferedReader(new InputStreamReader(file));
+            //new InputStreamReader(file);
+            //String line;
+            //while ((line = reader.readLine()) != null)) {
+             //   actText = line;
+            //}
+        //} catch (IOException e) {
+          //  throw new RuntimeException(e);
         }
 
 
-    }
-}
+    //}
+//}

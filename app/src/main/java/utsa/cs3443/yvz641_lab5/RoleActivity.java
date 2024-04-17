@@ -27,13 +27,16 @@ User user = new User();
             Button a1 = findViewById(R.id.button3);
             Button a2 = findViewById(R.id.button2);
             Button Lo = findViewById(R.id.button4);
-            int buttonclicked;
+
+        final int[] buttonclicked = new int[1];
         a1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                buttonclicked[0] =1;
                 Intent i = new Intent(RoleActivity.this, ActActivity.class);
-                i.putExtra("buttonclicked", 1);
+                int int_i=1;
+                String s = "s";
+                Intent intent = i.putExtra( s, buttonclicked[0]);
                 startActivity(i);
             }
         });
