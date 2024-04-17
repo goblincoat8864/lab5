@@ -25,7 +25,7 @@ public class User {
             BufferedReader reader = new BufferedReader(new InputStreamReader(file));
             new InputStreamReader(file);
             String line;
-            while (line = reader.readLine()!= null) {
+            while ((line = reader.readLine())!= null) {
                 String[] tokens;
                 String[] split = (line.split(","));
                 username = split[0];
