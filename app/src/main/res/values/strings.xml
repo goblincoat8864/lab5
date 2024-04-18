@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">yvz641-lab5</string>
+    <string name="RoleActivity_label" />
+    <string name="ActActivity_label"/>
 </resources>

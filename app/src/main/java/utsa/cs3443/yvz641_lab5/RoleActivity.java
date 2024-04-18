@@ -45,15 +45,18 @@ User user = new User();
             public void onClick(View v) {
 
                 Intent i = new Intent(RoleActivity.this, ActActivity.class);
-                i.putExtra("buttonclicked", 2);
+                i.putExtra("buttonClicked",2);
                 startActivity(i);
             }
         });
-        Lo.setOnClickListener(new View.OnClickListener() {
+        Lo.setOnClickListener( new View.OnClickListener() {
                                   @Override
                                   public void onClick(View v) {
                                       Intent i = new Intent(RoleActivity.this, MainActivity.class);
-                                      // need to revoke credentials before starting main again.
+                                      boolean value = i.getBooleanExtra("user",true);
+                                      value=false;
+                                      i.putExtra("user",value);
+
                                       startActivity(i);
                                   }
                               }

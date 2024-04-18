@@ -17,6 +17,9 @@ public class User {
     public String role2;
 
     public Context context;
+    public boolean validate(String userinput, String passinput){
+    return  (this.username.equals(userinput)&& this.password.equals(passinput));
+    };
 
     public void loadactor() {
         try {
