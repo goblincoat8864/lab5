@@ -10,6 +10,9 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.List;
+
+import utsa.cs3443.yvz641_lab5.model.Role;
 import utsa.cs3443.yvz641_lab5.model.User;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,30 +22,29 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.button);
-        EditText Userinput = (EditText)findViewById(R.id.user);
-        EditText Passinput = (EditText)findViewById(R.id.pass);
-
-        Context context = getApplicationContext();
-        User user = new User();
-        user.loadactor();
+         Button button = findViewById(R.id.button);
+        EditText Userinput = findViewById(R.id.user);
+        EditText Passinput = findViewById(R.id.pass);
 
 
-        button.setOnClickListener (new View.OnClickListener() {
 
-
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String userinput = Userinput.getText().toString();
                 String passinput = Passinput.getText().toString();
-                user.loadactor();
-                user.validate(userinput, passinput);
-                if (user.validate(userinput, passinput)) {
+                List<User> userList = User.loadactor(getApplicationContext());
+
+
+                User user = User.validate(userinput, passinput, userList);
+                if (user != null) {
                     Intent intent = new Intent(MainActivity.this, RoleActivity.class);
-                    intent.putExtra("user", true);
+                    intent.putExtra("user", user);
                     startActivity(intent);
-                } else if (!user.validate(userinput, passinput)) {
-                    Toast.makeText(context,"User not found",Toast.LENGTH_SHORT).show();
+                }
+                else {
+
+                    Toast.makeText(MainActivity.this, "User not found", Toast.LENGTH_SHORT).show();
                 }
             }
         });
